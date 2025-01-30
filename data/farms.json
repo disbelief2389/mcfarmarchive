@@ -1,0 +1,14 @@
+{
+    "farms": [
+        {
+            "id": "0001",
+            "title": "Iron Farm v1.0",
+            "author": "Chapman Farms",
+            "version": "1.21.4",
+            "tags": ["iron", "redstoneless", "hostile-mobs"],
+            "images": ["pages/farms/iron/iron-farm-v1/images/image (2).png"],
+            "description": "Compact design with 400+ ingots/hr...",
+            "download": "pages/farms/iron/iron-farm-v1/iron-farm-v1.html"
+        }
+    ]
+}
