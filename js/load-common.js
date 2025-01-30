@@ -14,24 +14,8 @@ function loadHTML(elementId, filePath) {
         })
         .then(data => {
             element.innerHTML = data;
-            if (elementId === 'navbar') {
-                updateNavbarLinks();
-            }
         })
         .catch(error => console.error('Error loading HTML:', error));
-}
-
-function updateNavbarLinks() {
-    const links = document.querySelectorAll('#navbar a');
-    links.forEach(link => {
-        const href = link.getAttribute('href');
-        console.log(`Original href: ${href}`);
-        if (href.startsWith('/')) {
-            const newHref = window.location.origin + href;
-            link.setAttribute('href', newHref);
-            console.log(`Updated href: ${newHref}`);
-        }
-    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
