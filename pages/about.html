@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/mcfarmarchive/">
-    <link rel="stylesheet" href="/mcfarmarchive/css/styles.css">
-    <link rel="icon" href="/mcfarmarchive/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>About - The Minecraft Farm Archive</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const base = document.createElement('base');
+            base.href = window.location.hostname === 'localhost' ? '/' : '/mcfarmarchive/';
+            document.head.appendChild(base);
+        });
+    </script>
 </head>
 <body>
     <div id="header"></div>
@@ -42,8 +48,8 @@
                 So, I hope that you enjoy the site, and that you find it useful in your Minecraft adventures. If you have any questions or suggestions, feel free to contact me. I'm always happy to hear from other players, and I'm always looking for ways to improve the site.
             </p>
         </section>
-        <script src="/mcfarmarchive/js/load-common.js"></script>
-        <script src="/mcfarmarchive/js/script.js"></script>
+        <script src="js/load-common.js"></script>
+        <script src="js/script.js"></script>
     </main>
     <div id="footer"></div>
 </body>
