@@ -1,4 +1,10 @@
 function loadHTML(elementId, filePath) {
+    const element = document.getElementById(elementId);
+    if (!element) {
+        console.error(`Element with id ${elementId} not found`);
+        return;
+    }
+
     fetch(filePath)
         .then(response => {
             if (!response.ok) {
@@ -7,7 +13,7 @@ function loadHTML(elementId, filePath) {
             return response.text();
         })
         .then(data => {
-            document.getElementById(elementId).innerHTML = data;
+            element.innerHTML = data;
             if (elementId === 'navbar') {
                 updateNavbarLinks();
             }
