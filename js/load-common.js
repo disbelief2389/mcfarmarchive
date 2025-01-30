@@ -38,5 +38,4 @@ document.addEventListener('DOMContentLoaded', () => {
     loadHTML('navbar', 'navbar.html');
     loadHTML('header', 'header.html');
     loadHTML('footer', 'footer.html');
-    loadHTML('background', 'background.html');
 });
