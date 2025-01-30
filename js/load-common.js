@@ -5,19 +5,12 @@ function loadHTML(elementId, filePath) {
         return;
     }
 
-    const baseURL = window.location.hostname === 'localhost' ? '/' : '/mcfarmarchive/';
-    const fullPath = baseURL + filePath;
-
-    fetch(fullPath)
+    fetch(filePath)
         .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
+            if (!response.ok) throw new Error('Network error: ' + response.statusText);
             return response.text();
         })
-        .then(data => {
-            element.innerHTML = data;
-        })
+        .then(data => element.innerHTML = data)
         .catch(error => console.error('Error loading HTML:', error));
 }
 

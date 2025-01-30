@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" class="stone-background">
 <head>
+    <script>
+        (function() {
+            const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            const base = document.createElement('base');
+            base.href = isLocal ? '/' : '/mcfarmarchive/';
+            document.head.appendChild(base);
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>About - The Minecraft Farm Archive</title>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const base = document.createElement('base');
-            base.href = window.location.hostname === 'localhost' ? '/' : '/mcfarmarchive/';
-            document.head.appendChild(base);
-        });
-    </script>
 </head>
 <body>
     <div id="header"></div>
@@ -48,9 +49,9 @@
                 So, I hope that you enjoy the site, and that you find it useful in your Minecraft adventures. If you have any questions or suggestions, feel free to contact me. I'm always happy to hear from other players, and I'm always looking for ways to improve the site.
             </p>
         </section>
-        <script src="js/load-common.js"></script>
-        <script src="js/script.js"></script>
     </main>
     <div id="footer"></div>
+    <script src="js/load-common.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

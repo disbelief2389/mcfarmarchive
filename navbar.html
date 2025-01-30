@@ -1,9 +1,17 @@
+<script>
+    (function() {
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const base = document.createElement('base');
+        base.href = isLocal ? '/' : '/mcfarmarchive/';
+        document.head.appendChild(base);
+    })();
+</script>
 <nav>
     <ul>
-        <li><a href="/mcfarmarchive/index.html">Home</a></li>
-        <li><a href="/mcfarmarchive/pages/farms.html">Farms</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pages/farms.html">Farms</a></li>
         <!-- <li><a href="/pages/tutorials.html">Tutorials</a></li> -->
-        <li><a href="/mcfarmarchive/pages/about.html">About</a></li>
-        <li><a href="/mcfarmarchive/pages/contact.html">Contact</a></li>
+        <li><a href="pages/about.html">About</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
     </ul>
 </nav>
