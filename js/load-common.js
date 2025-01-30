@@ -19,8 +19,11 @@ function updateNavbarLinks() {
     const links = document.querySelectorAll('#navbar a');
     links.forEach(link => {
         const href = link.getAttribute('href');
+        console.log(`Original href: ${href}`);
         if (href.startsWith('/')) {
-            link.setAttribute('href', window.location.origin + href);
+            const newHref = window.location.origin + href;
+            link.setAttribute('href', newHref);
+            console.log(`Updated href: ${newHref}`);
         }
     });
 }
