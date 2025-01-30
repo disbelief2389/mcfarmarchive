@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const farmContainer = document.getElementById('farm-container');
     if (farmContainer) {
-        fetch('data/farms.json')
+        fetch('/mcfarmarchive/data/farms.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 console.log('Farm data loaded:', data);
 
-                fetch('assets/templates/farm-card.html')
+                fetch('/mcfarmarchive/assets/templates/farm-card.html')
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('Network response was not ok ' + response.statusText);
