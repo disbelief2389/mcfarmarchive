@@ -1,4 +1,4 @@
-fetch('../data/farms.json')
+fetch('data/farms.json')
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
@@ -9,7 +9,7 @@ fetch('../data/farms.json')
         console.log('Farm data loaded:', data);
         const farmContainer = document.getElementById('farm-container');
 
-        fetch('../assets/templates/farm-card.html')
+        fetch('assets/templates/farm-card.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
@@ -37,11 +37,11 @@ fetch('../data/farms.json')
                     }
 
                     // Construct the correct image path
-                    farmImage.src = '../' + farm.images[0];
+                    farmImage.src = farm.images[0];
                     farmImage.alt = farm.title;
                     farmTitle.textContent = farm.title;
                     farmDescription.textContent = farm.description;
-                    farmLink.href = '../' + farm.download;
+                    farmLink.href = farm.download;
 
                     farmContainer.appendChild(farmCard);
                 });
