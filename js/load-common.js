@@ -5,7 +5,10 @@ function loadHTML(elementId, filePath) {
         return;
     }
 
-    fetch(filePath)
+    const baseURL = window.location.hostname === 'localhost' ? '/' : '/mcfarmarchive/';
+    const fullPath = baseURL + filePath;
+
+    fetch(fullPath)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -19,7 +22,7 @@ function loadHTML(elementId, filePath) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadHTML('navbar', '/mcfarmarchive/navbar.html');
-    loadHTML('header', '/mcfarmarchive/header.html');
-    loadHTML('footer', '/mcfarmarchive/footer.html');
+    loadHTML('navbar', 'navbar.html');
+    loadHTML('header', 'header.html');
+    loadHTML('footer', 'footer.html');
 });

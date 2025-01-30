@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchBar = document.getElementById('search-bar');
 
     if (farmContainer && searchBar) {
-        fetch('/mcfarmarchive/data/farms.json')
+        fetch('data/farms.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 console.log('Farm data loaded:', data);
 
-                fetch('/mcfarmarchive/assets/templates/farm-card.html')
+                fetch('assets/templates/farm-card.html')
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('Network response was not ok ' + response.statusText);
